@@ -4,8 +4,10 @@ const API_KEY = 'AIzaSyAUc3JLp0mqxy-S6ayRENJWy8OpspY6suY';
 export const getPopular = () => {
   return fetch(
     `${BASE_URL}/videos?key=${API_KEY}&part=snippet&maxResults=25&chart=mostPopular&regionCode=KR`
-  )
-    .then((res) => res.json())
-    .then((result) => result);
+  ).then((res) => res.json());
 };
-export const SearchByValue = (query) => {};
+export const SearchByValue = (query) => {
+  return fetch(
+    `${BASE_URL}/search?key=${API_KEY}&part=snippet&maxResults=25&regionCode=KR&${query}`
+  ).then((res) => res.json());
+};
