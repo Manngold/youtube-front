@@ -8,6 +8,6 @@ export const getPopular = () => {
 };
 export const SearchByValue = (query) => {
   return fetch(
-    `${BASE_URL}/search?key=${API_KEY}&part=snippet&maxResults=25&regionCode=KR&${query}`
+    `${BASE_URL}/search?key=${API_KEY}&part=snippet&maxResults=25&regionCode=KR&q=${query}`
   ).then((res) => res.json());
 };

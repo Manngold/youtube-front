@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/header';
-import './app.css';
 import Popular from './components/popular/';
+import SearchResult from './components/searchResult/';
+import './app.css';
 
 function App() {
+  const [searchData, setSearchData] = useState([]);
+  console.log(searchData);
   return (
     <>
-      <Header />
-      <Popular />
+      <Header setSearchData={setSearchData} />
+      {searchData.length > 0 && searchData ? (
+        <SearchResult results={searchData} />
+      ) : (
+        <Popular />
+      )}
     </>
   );
 }

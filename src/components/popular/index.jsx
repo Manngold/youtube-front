@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { getPopular } from '../../api';
+import { dateFixer } from '../../fixer';
 import styles from './popular.module.css';
 const Popular = () => {
   const [videos, setVideos] = useState([]);
-  const dateFixer = (date) => {
-    const origin = new Date(date);
-    const year = origin.getFullYear();
-    const month = origin.getMonth() + 1;
-    const day = origin.getDate();
-    return `${year}.${month}.${day}`;
-  };
   useEffect(() => {
     getPopular().then((result) => setVideos(result.items));
   }, []);

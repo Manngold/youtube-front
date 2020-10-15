@@ -11,12 +11,6 @@
   bottom: 2%;
   width: 100%;
   color: white;
-  visibility: hidden;
-}
-
-.info:hover {
-  visibility: visible;
-  transition: 1s, ease-in-out;
 }
 
 span {
