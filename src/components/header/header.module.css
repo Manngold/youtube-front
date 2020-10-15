@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  font-size: 30px;
+  margin: 15px;
+  position: relative;
+  font-weight: 500;
+  height: 80px;
+}
+
+.container > svg {
+  color: red;
+  font-size: 40px;
+  margin: 0px 10px 0px 10px;
+}
+
+.searchContainer {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+}
+
+.searchContainer > input {
+  width: 500px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.searchContainer > button {
+  height: 35px;
+  width: 50px;
+}
