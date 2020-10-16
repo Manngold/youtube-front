@@ -5,8 +5,9 @@
 ## To Do
 
 - [x] Get videos using youtube APIs
-- [ ] Add Popular Videos Component
-- [ ] Add Search Component
+- [x] Add Popular Videos Component
+- [x] Add Search Component
+- [ ] Add React Router
 - [ ] Add Detail Component
 - [ ] Styling
 - [ ] Add Responsive style
