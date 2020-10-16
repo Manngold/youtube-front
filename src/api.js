@@ -1,5 +1,9 @@
+import dotenv from 'dotenv';
+
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
-const API_KEY = 'AIzaSyAUc3JLp0mqxy-S6ayRENJWy8OpspY6suY';
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+dotenv.config();
 
 export const getPopular = () => {
   return fetch(

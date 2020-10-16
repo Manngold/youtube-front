@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getPopular } from '../../api';
 import { dateFixer } from '../../fixer';
 import styles from './popular.module.css';
+
 const Popular = () => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
