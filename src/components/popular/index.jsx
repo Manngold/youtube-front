@@ -10,28 +10,30 @@ const Popular = () => {
   }, []);
   return (
     <ul>
-      {videos.map((video) => {
-        const {
-          snippet: {
-            channelTitle,
-            publishedAt,
-            thumbnails: {
-              high: { url },
-            },
-            title,
-          },
-        } = video;
-        return (
-          <li className={styles.video} key={Date.now() + Math.random()}>
-            <img src={url} />
-            <div className={styles.info}>
-              <span>{channelTitle}</span>
-              <span>{dateFixer(publishedAt)}</span>
-              <span>{title}</span>
-            </div>
-          </li>
-        );
-      })}
+      {videos && videos.length !== 0
+        ? videos.map((video) => {
+            const {
+              snippet: {
+                channelTitle,
+                publishedAt,
+                thumbnails: {
+                  high: { url },
+                },
+                title,
+              },
+            } = video;
+            return (
+              <li className={styles.video} key={Date.now() + Math.random()}>
+                <img src={url} />
+                <div className={styles.info}>
+                  <span>{channelTitle}</span>
+                  <span>{dateFixer(publishedAt)}</span>
+                  <span>{title}</span>
+                </div>
+              </li>
+            );
+          })
+        : 'No Data'}
     </ul>
   );
 };

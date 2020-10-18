@@ -8,9 +8,12 @@ dotenv.config();
 export const getPopular = () => {
   return fetch(
     `${BASE_URL}/videos?key=${API_KEY}&part=snippet&maxResults=25&chart=mostPopular&regionCode=KR`
-  ).then((res) => res.json());
+  ).then((res) => {
+    console.log(res);
+    return res.json();
+  });
 };
-export const SearchByValue = (query) => {
+export const searchByValue = (query) => {
   return fetch(
     `${BASE_URL}/search?key=${API_KEY}&part=snippet&maxResults=25&regionCode=KR&q=${query}`
   ).then((res) => res.json());

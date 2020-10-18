@@ -6,7 +6,9 @@
   font-weight: 500;
   height: 80px;
 }
-
+.logo {
+  text-decoration: none;
+}
 .container > svg {
   color: red;
   font-size: 40px;
