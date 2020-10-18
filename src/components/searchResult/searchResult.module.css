@@ -1,0 +1,11 @@
+.container {
+  list-style: none;
+  margin: 10px;
+}
+
+.thumbnail {
+  display: inline-block;
+}
+.info {
+  display: inline-block;
+}
