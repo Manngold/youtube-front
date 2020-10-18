@@ -8,7 +8,6 @@ export const getPopular = () => {
   return fetch(
     `${BASE_URL}/videos?key=${API_KEY}&part=snippet&maxResults=25&chart=mostPopular&regionCode=KR`
   ).then((res) => {
-    console.log(res);
     return res.json();
   });
 };
