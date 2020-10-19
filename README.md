@@ -8,7 +8,7 @@
 - [x] Add Popular Videos Component
 - [x] Add Search Component
 - [x] Add React Router
-- [ ] Add Detail Component
+- [x] Add Detail Component
+- [ ] Refactoring
 - [ ] Styling
 - [ ] Add Responsive style
-- [ ] Refactoring
