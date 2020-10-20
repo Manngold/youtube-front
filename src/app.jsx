@@ -1,22 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/header/';
-import Popular from './components/popular/';
-import SearchResult from './components/searchResult/';
-import './app.css';
-import Detail from './components/detail/';
+import React, { useEffect, useState } from 'react';
+import VideoList from './components/video_list/video_list';
 
 function App() {
+  const [videos, setVideos] = useState([]);
+  useEffect(() => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    };
+
+    fetch(
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&maxResults=25&chart=mostPopular&regionCode=KR&key=${process.env.REACT_APP_API_KEY}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setVideos(result.items))
+      .catch((error) => console.log('error', error));
+  }, []);
   return (
     <>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path='/' render={() => <Popular />} />
-          <Route path='/search' render={() => <SearchResult />} />
-          <Route path='/watch' render={() => <Detail />} />
-        </Switch>
-      </Router>
+      <VideoList videos={videos} />
     </>
   );
 }
