@@ -14,7 +14,7 @@ class Youtube {
         this.requestOptions
       );
       const result = await response.json();
-      return result;
+      return result.items;
     } catch (error) {
       return console.log('error', error);
     }
@@ -22,11 +22,11 @@ class Youtube {
   async search(query) {
     try {
       const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&regionCode=KR&q=${query}&key=${this.key}`,
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=25&regionCode=KR&q=${query}&key=${this.key}`,
         this.requestOptions
       );
       const result = await response.json();
-      return result;
+      return result.items;
     } catch (error) {
       console.log('error', error);
     }

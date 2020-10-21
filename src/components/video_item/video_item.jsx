@@ -9,10 +9,12 @@ const VideoItem = ({
         medium: { url },
       },
     },
+    id,
   },
-  id,
+  onSelect,
+  video,
 }) => (
-  <li className={styles.video_item}>
+  <li className={styles.video_item} onClick={() => onSelect(video)}>
     <img src={url} alt='video thumbnail' />
     <div className={styles.video_info}>
       <span className={styles.video_title}>{title}</span>

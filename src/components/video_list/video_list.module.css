@@ -1,4 +1,13 @@
-.list_container {
+.list_container_list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.list_container_grid {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
