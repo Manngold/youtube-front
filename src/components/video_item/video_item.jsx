@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './video_item.module.css';
 const VideoItem = ({
   video: {
     snippet: {
@@ -12,10 +12,12 @@ const VideoItem = ({
   },
   id,
 }) => (
-  <li key={id}>
-    <img src={url} />
-    <span>{title}</span>
-    <span>{channelTitle}</span>
+  <li className={styles.video_item}>
+    <img src={url} alt='video thumbnail' />
+    <div className={styles.video_info}>
+      <span className={styles.video_title}>{title}</span>
+      <span className={styles.video_channel}>{channelTitle}</span>
+    </div>
   </li>
 );
 
