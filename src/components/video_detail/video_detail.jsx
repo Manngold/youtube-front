@@ -12,7 +12,7 @@ const VideoDetail = ({
       className={styles.detail_video}
       title={title}
       type='text/html'
-      src={`http://www.youtube.com/embed/${id}`}
+      src={`https://www.youtube.com/embed/${id}`}
       allowFullScreen
       frameBorder='0'
     />
