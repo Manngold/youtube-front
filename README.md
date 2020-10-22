@@ -1,6 +1,12 @@
 # Youtube App
 
-## Using React and Youtube APIs build app
+Build Youtube using React and Youtube Data Api
+
+## Demo
+
+[Demo Link] https://manngold-youtube-demo.netlify.app
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/44223cc3-417c-48bb-b1f6-f9f044c80094/deploy-status)](https://app.netlify.com/sites/manngold-youtube-demo/deploys)
 
 ## To Do
 
@@ -11,3 +17,5 @@
 - [x] Refactoring
 - [x] Styling
 - [x] Add Responsive style
+- [ ] add mobile version design
+- [ ] ...more feature(load comments, personal data..., Typescript)
