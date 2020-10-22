@@ -10,4 +10,4 @@
 - [x] Add Detail Component
 - [x] Refactoring
 - [x] Styling
-- [ ] Add Responsive style
+- [x] Add Responsive style
