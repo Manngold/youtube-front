@@ -47,4 +47,10 @@
   .video_title {
     margin-bottom: 0.2em;
   }
+  .video_item_grid {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
 }
