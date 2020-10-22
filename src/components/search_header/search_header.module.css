@@ -5,8 +5,13 @@
   padding: 0.8em;
 }
 
-.header_logo {
+.header_logo_container {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header_logo {
   color: red;
   font-size: 2.5rem;
   margin-bottom: 0.4rem;

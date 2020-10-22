@@ -10,6 +10,7 @@ const VideoDetail = ({
   <section className={styles.detail_container}>
     <iframe
       className={styles.detail_video}
+      title={title}
       type='text/html'
       src={`http://www.youtube.com/embed/${id}`}
       allowFullScreen
