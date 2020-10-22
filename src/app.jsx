@@ -13,6 +13,7 @@ function App({ youtube }) {
         return { ...result, id: result.id.videoId };
       });
       setVideos(newResult);
+      setSelectedVideo(null);
     });
   };
   const onSelect = (video) => {
@@ -24,7 +25,7 @@ function App({ youtube }) {
 
   return (
     <div className={styles.app}>
-      <SearchHeader onSearch={onSearch} />
+      <SearchHeader onSearch={onSearch} setSelectedVideo={setSelectedVideo} />
       <div className={styles.container}>
         {selectedVideo && <VideoDetail video={selectedVideo} />}
         <VideoList
