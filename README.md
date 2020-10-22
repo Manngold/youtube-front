@@ -5,10 +5,9 @@
 ## To Do
 
 - [x] Get videos using youtube APIs
-- [x] Add Popular Videos Component
-- [x] Add Search Component
-- [x] Add React Router
+- [x] Add VideoList Component
+- [x] Add SearchHeader Component
 - [x] Add Detail Component
-- [ ] Refactoring
-- [ ] Styling
+- [x] Refactoring
+- [x] Styling
 - [ ] Add Responsive style
