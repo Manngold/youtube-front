@@ -19,3 +19,7 @@ Build Youtube using React and Youtube Data Api
 - [x] Add Responsive style
 - [ ] add mobile version design
 - [ ] ...more feature(load comments, personal data..., Typescript)
+
+## Logs
+
+- 20.10.23 : Add Comment Feature
