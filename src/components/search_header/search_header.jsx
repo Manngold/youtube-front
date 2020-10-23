@@ -18,7 +18,6 @@ const SearchHeader = memo(({ onSearch, setSelectedVideo }) => {
   const onLogoClick = () => {
     setSelectedVideo(null);
   };
-  console.log('header');
   return (
     <header className={styles.header_container}>
       <div className={styles.header_logo_container} onClick={onLogoClick}>

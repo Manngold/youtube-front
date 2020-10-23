@@ -10,7 +10,6 @@ const VideoItem = memo(
           medium: { url },
         },
       },
-      id,
     },
     onSelect,
     video,

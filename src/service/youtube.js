@@ -31,6 +31,18 @@ class Youtube {
       console.log('error', error);
     }
   }
+  async commentThreads(videoId) {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&textFormat=plainText&key=${this.key}`,
+        this.requestOptions
+      );
+      const result = await response.json();
+      return result.items;
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
 }
 
 export default Youtube;

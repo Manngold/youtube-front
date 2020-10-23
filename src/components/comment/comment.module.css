@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  margin-bottom: 0.8rem;
+}
+
+.info {
+  padding-left: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile {
+  border-radius: 50%;
+}
