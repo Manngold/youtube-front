@@ -12,9 +12,9 @@ const Comment = ({
 }) => (
   <li className={styles.container}>
     <img
+      alt='user profile'
       className={styles.profile}
       src={authorProfileImageUrl}
-      alt='profile image'
     />
     <div className={styles.info}>
       <span>{authorDisplayName}</span>
