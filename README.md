@@ -23,4 +23,4 @@ Build Youtube using React and Youtube Data Api
 ## Logs
 
 - 20.10.23 : Add Comment Feature
-- 20.10.25 : Add Dark Mode CSS
+- 20.10.25 : Add Dark Mode CSS, Fix comment profile image issue
