@@ -31,7 +31,9 @@ const VideoItem = memo(
         alt='video thumbnail'
       />
       <div className={styles.video_info}>
-        <span className={styles.video_title}>{title}</span>
+        <span className={styles.video_title}>
+          {title.length > 60 ? `${title.slice(0, 60)}...` : title}
+        </span>
         <span className={styles.video_channel}>{channelTitle}</span>
       </div>
     </li>

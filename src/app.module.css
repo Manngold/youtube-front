@@ -4,9 +4,17 @@
 
 .container {
   display: flex;
+  margin: 1.1rem;
 }
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .app {
+    background-color: #181818;
+    color: whitesmoke;
   }
 }

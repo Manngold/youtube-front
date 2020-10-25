@@ -38,8 +38,8 @@
 }
 
 .video_channel {
-  font-size: 0.8rem;
-  color: #4b4b4b;
+  font-size: 0.9rem;
+  color: #686868;
 }
 @media (max-width: 1024px) {
   .video_info {
@@ -53,5 +53,13 @@
     height: 100%;
     flex-direction: row;
     align-items: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .video_item_grid,
+  .video_info,
+  .video_item_list {
+    border: none;
   }
 }

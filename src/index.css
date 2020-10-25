@@ -2,4 +2,6 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  margin: 0;
+  border: none;
 }
