@@ -37,10 +37,14 @@ class Youtube {
         `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&textFormat=plainText&key=${this.key}`,
         this.requestOptions
       );
+      if (response.status === 403) {
+        throw Error('no comments');
+      }
       const result = await response.json();
       return result.items;
     } catch (error) {
-      console.log('error', error);
+      const result = ['error'];
+      return result;
     }
   }
 }

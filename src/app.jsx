@@ -21,7 +21,9 @@ function App({ youtube }) {
     [youtube]
   );
   const getComments = (videoId) => {
-    youtube.commentThreads(videoId).then((result) => setComments(result));
+    youtube.commentThreads(videoId).then((result) => {
+      setComments(result);
+    });
   };
   const onSelect = (video) => {
     setSelectedVideo(video);
