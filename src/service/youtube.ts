@@ -1,10 +1,8 @@
-type key = string;
-
 class Youtube {
   key: string;
   requestOptions: object;
 
-  constructor(key: key) {
+  constructor(key: string) {
     this.key = key;
     this.requestOptions = {
       method: 'GET',
