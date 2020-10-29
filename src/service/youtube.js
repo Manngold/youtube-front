@@ -1,52 +1,54 @@
+import axios from 'axios';
+
 class Youtube {
   constructor(key) {
-    this.key = key;
-    this.requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
+    this.youtube = axios.create({
+      baseURL: 'https://www.googleapis.com/youtube/v3',
+      params: { key, part: 'snippet' },
+    });
   }
 
   async getPopular() {
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?part=snippet&maxResults=28&chart=mostPopular&regionCode=KR&key=${this.key}`,
-        this.requestOptions
-      );
-      const result = await response.json();
-      return result.items;
+      const response = await this.youtube.get('videos', {
+        params: {
+          maxResults: 28,
+          chart: 'mostPopular',
+          regionCode: 'KR',
+        },
+      });
+      return response.data.items;
     } catch (error) {
-      return console.log('error', error);
+      console.log(error);
     }
   }
   async search(query) {
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=28&regionCode=KR&q=${query}&key=${this.key}`,
-        this.requestOptions
-      );
-      const result = await response.json();
-      return result.items;
+      const response = await this.youtube.get('search', {
+        params: {
+          type: 'video',
+          maxResults: 28,
+          q: query,
+          regionCode: 'KR',
+        },
+      });
+      return response.data.items;
     } catch (error) {
-      console.log('error', error);
+      console.log(error);
     }
   }
   async commentThreads(videoId) {
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&textFormat=plainText&key=${this.key}`,
-        this.requestOptions
-      );
-      if (response.status === 403) {
-        throw Error('no comments');
-      }
-      const result = await response.json();
-      return result.items;
+      const response = await this.youtube.get('commentThreads', {
+        params: {
+          videoId,
+          textFormat: 'plainText',
+        },
+      });
+      return response.data.items;
     } catch (error) {
-      const result = ['error'];
-      return result;
+      return ['error'];
     }
   }
 }
-
 export default Youtube;
