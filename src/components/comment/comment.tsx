@@ -1,30 +1,30 @@
 import React from 'react';
 import styles from './comment.module.css';
 
-interface Comment {
+interface IComment {
   comment: object;
-  snippet: Snippet;
+  snippet: ISnippet;
 }
-interface Snippet {
-  topLevelComment: LastSnippet;
-}
-
-interface LastSnippet {
-  snippet: CommentInterface;
+interface ISnippet {
+  topLevelComment: ILastSnippet;
 }
 
-interface CommentInterface {
+interface ILastSnippet {
+  snippet: ICommentInfo;
+}
+
+interface ICommentInfo {
   textDisplay: string;
   authorDisplayName: string;
   authorProfileImageUrl: string;
 }
 
-const Comment: React.FC<{ comment: Comment }> = ({ comment }): JSX.Element => {
+const Comment: React.FC<{ comment: IComment }> = ({ comment }): JSX.Element => {
   const {
     textDisplay,
     authorDisplayName,
     authorProfileImageUrl,
-  }: CommentInterface = comment.snippet.topLevelComment.snippet;
+  }: ICommentInfo = comment.snippet.topLevelComment.snippet;
   return (
     <li className={styles.container}>
       <img
