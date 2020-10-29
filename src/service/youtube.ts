@@ -1,5 +1,10 @@
+type key = string;
+
 class Youtube {
-  constructor(key) {
+  key: string;
+  requestOptions: object;
+
+  constructor(key: key) {
     this.key = key;
     this.requestOptions = {
       method: 'GET',
@@ -19,7 +24,7 @@ class Youtube {
       return console.log('error', error);
     }
   }
-  async search(query) {
+  async search(query: string) {
     try {
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=28&regionCode=KR&q=${query}&key=${this.key}`,
@@ -31,7 +36,7 @@ class Youtube {
       console.log('error', error);
     }
   }
-  async commentThreads(videoId) {
+  async commentThreads(videoId: string) {
     try {
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&textFormat=plainText&key=${this.key}`,
