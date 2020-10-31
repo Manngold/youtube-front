@@ -28,3 +28,4 @@ Build Youtube using React and Youtube Data Api
 - 20.10.25 : Add Dark Mode CSS, Fix comment profile image issue
 - 20.10.26 : Fix Comment Threads 403 error
 - 20.10.27 : Start Refactoring using typescript
+- 20.10.30 : Using axios refactor youtube.js
