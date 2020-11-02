@@ -1,30 +1,15 @@
 import React from 'react';
 import styles from './comment.module.css';
-
-interface IComment {
-  comment: object;
-  snippet: IOuterSnippet;
-}
-interface IOuterSnippet {
-  topLevelComment: IInnerSnippet;
-}
-
-interface IInnerSnippet {
-  snippet: ICommentInfo;
-}
-
-interface ICommentInfo {
-  textDisplay: string;
-  authorDisplayName: string;
-  authorProfileImageUrl: string;
-}
+import { IComment } from '../../types/Comments';
 
 const Comment: React.FC<{ comment: IComment }> = ({ comment }): JSX.Element => {
   const {
-    textDisplay,
-    authorDisplayName,
-    authorProfileImageUrl,
-  }: ICommentInfo = comment.snippet.topLevelComment.snippet;
+    snippet: {
+      topLevelComment: {
+        snippet: { textDisplay, authorDisplayName, authorProfileImageUrl },
+      },
+    },
+  } = comment;
   return (
     <li className={styles.container}>
       <img
