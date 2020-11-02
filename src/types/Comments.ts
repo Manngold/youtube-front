@@ -1,5 +1,5 @@
 export type IComments = {
-  [index: number]: string | IComments;
+  [index: number]: string | IComment;
   length: number;
   map: (callback: (comment: IComment) => JSX.Element) => JSX.Element[];
 };
