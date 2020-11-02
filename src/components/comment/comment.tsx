@@ -3,13 +3,13 @@ import styles from './comment.module.css';
 
 interface IComment {
   comment: object;
-  snippet: ISnippet;
+  snippet: IOuterSnippet;
 }
-interface ISnippet {
-  topLevelComment: ILastSnippet;
+interface IOuterSnippet {
+  topLevelComment: IInnerSnippet;
 }
 
-interface ILastSnippet {
+interface IInnerSnippet {
   snippet: ICommentInfo;
 }
 
